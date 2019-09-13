@@ -1,8 +1,10 @@
 import React, { Component} from 'react'
 
+
 class Beers extends Component {
 
     state = {
+        count: 0,
         beers:[]
     }
     componentDidMount(){
@@ -13,6 +15,12 @@ class Beers extends Component {
         })
     }
 
+
+    likeBeer = () => {
+        this.setState({ count: this.state.count + 1})
+    }
+    
+    
     render() {
 
         return(
@@ -20,10 +28,13 @@ class Beers extends Component {
 
             {this.state.beers.map( d => {
                 return (
-                    <div style={{ height: '50px'}}>
+                    <div class = "eachBeer">
                         <h3>{d.name}</h3>
                         <p>{d.description}</p>
-                        <img src= {d.image_url} />
+                        <img class="eachBeerPic" src= {d.image_url} />
+                        <span><button onClick={this.likeBeer}>Like</button>  
+                        <h3 class="count">{this.state.count}</h3>
+                        </span>
                     </div>
                 )
             })
@@ -31,7 +42,8 @@ class Beers extends Component {
             </div>
         )
     }
-    
 }
+    
+
 
 export default Beers

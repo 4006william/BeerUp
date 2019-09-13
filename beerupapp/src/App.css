@@ -1,17 +1,36 @@
 .App {
   text-align: center;
   background: brown;
-  height: 600px;
   color: white;
 }
 h1, h4{
   font-style: italic;
-
+  color: blue;
 }
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
+.eachBeer{
+  border: 2px solid white;
+  padding: 5px;
+}
+
+.eachBeerPic {
+  animation: App-logo-spin infinite 5s;
   height: 40vmin;
   pointer-events: none;
+}
+span{
+  display: block;
+}
+button{
+  margin-bottom: 0px;
+  padding: 10px;
+  height: 40px;
+  background: green;
+  border-radius: 50px;
+  cursor: pointer;
+
+}
+.count{
+  margin-bottom: 0px;
 }
 
 .App-header {
@@ -31,9 +50,9 @@ h1, h4{
 
 @keyframes App-logo-spin {
   from {
-    transform: rotate(0deg);
+    transform: rotateY(0deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotateY(360deg);
   }
 }
